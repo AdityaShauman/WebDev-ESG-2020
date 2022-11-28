@@ -1,111 +1,18 @@
-<<<<<<< HEAD
 <!-- Warning: Trying to access array offset on value of type null in C:\xampp\htdocs\ESG-WEB-DEVELOPMENT-main\backend_work\info_lomba.php on line 7 -->
 <?php 
 $page = 'Info Lomba';
-include "header.php";
-$ach1 = mysqli_query($conn,"SELECT * FROM achievement ORDER BY id_achievement DESC LIMIT 12");
+
+include "connectdb.php"; 
+include "header.php"; 
+
+$ach1 = mysqli_query($conn,"SELECT * FROM prestasi ORDER BY id_prestasi DESC LIMIT 12");
 while($d=mysqli_fetch_assoc($ach1)){
     $data[] = $d;
 }
 $total = count($data);
 $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
 ?>
-    <section class="contact-sec">
-        <!---Section Title--->
-        <section id="title">
-            <div class="container mb-3">
-                <h2 class="title"> 
-                    <b>
-                    <font color="#273793">Hall of Fame</font>
-                    </b> 
-                </h2>
-            </div>
-        </section>
-        <section id="carousel-activity">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">   
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <?php 
-                    $count = 0;
-                    if($total<4){
-                        $max = $total;
-                    }
-                    while($count<4):
-                    ?>
-                    <div class="col"><img src="./assets/img/<?= $data[$count]['picture']; ?>" width="250" alt="<?= $data[$count]['activity']; ?>" ></div>   
-                    <?php 
-                    $count++;
-                    endwhile; ?>       
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <?php 
-                    $count = 0;
-                    $id = 4;
-                    if($total>4):
-                        if($total%4==0){
-                            $max = 4;
-                            if($total>8){
-                                $max = 4;
-                            }
-                        }else{
-                            $max=$total%4;
-                            if($total>8){
-                                $max = 4;
-                            }
-                        }
-                        while($count<$max):
-                    ?>
-                    <div class="col"><img src="./assets/img/<?= $data[$id]['picture']; ?>" width="250" alt="<?= $data[$id]['activity']; ?>" ></div>   
-                    <?php 
-                    $id++;
-                    $count++;  
-                    endwhile;
-                    endif; 
-                    ?>       
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <?php 
-                    $count = 0;
-                    $id = 8;
-                    if($total>8):
-                        if($total%4==0){
-                            $max = 4;
-                        }else{
-                            $max=$total%4;
-                        }
-                        while($count<$max):
-                    ?>
-                    <div class="col"><img src="./assets/img/<?= $data[$id]['picture']; ?>" width="250" alt="<?= $data[$id]['activity']; ?>" ></div>   
-                    <?php 
-                    $id++;
-                    $count++;
-                        endwhile; 
-                    endif;
-                    ?>       
-                  </div>
-                </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-        </section>
-                </section>
-
+    
     <section class = "calendersec">            
         <!---Section Title--->
         <section id="title">
@@ -271,48 +178,10 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
         </section>
         </section>                                                    
 
-        <section class="mt-5">
-            <div class="container">
-              <p class="title-socmed"><b>Find us on social media!</b></p>
-              <div id="social-media">
-                <div class="container">
-                  <center>
-                    <table class="text-center">
-                      <tr>
-                        <td style="padding : 30px">
-                          <a href=""><button class="btn-socmed"><i class="fab fa-youtube stroke-transparent"></i></button></a>
-                          <p style="margin-top: 0.3cm;"><b>ERP Laboratory</b></p>
-                        </td>
-                        <td style="padding : 30px">
-                          <a href=""><button class="btn-socmed"><i class="fab fa-line stroke-transparent"></i></button></a>
-                          <p style="margin-top: 0.3cm;"><b>@dny3610n</b></p>
-                        </td>
-                        <td style="padding : 30px">
-                          <a href=""><button class="btn-socmed"><i class="fab fa-instagram stroke-transparent"></i></button></a>
-                          <p style="margin-top: 0.3cm;"><b>@erpstudygroup</b></p>
-                        </td>
-                        <td style="padding : 30px">
-                          <a href=""><button class="btn-socmed"><i class="fab fa-linkedin stroke-transparent"></i></button></a>
-                          <p style="margin-top: 0.3cm;"><b>ERP Study Group</b></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </center>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          <footer style=" background-color: #273793; color:#FFFFFF; padding-top: 20px; padding-bottom: 2px;">
-            <div class="container text-center">
-              <p><b><i>@ERP Study Group 2019</i></b></p>
-            </div>
-          </footer>
     </body>
-=======
 <?php 
 $page = 'Info Lomba';
-include "header.php";
 $ach1 = mysqli_query($conn,"SELECT * FROM prestasi WHERE gambar IS NOT NULL ORDER BY id_prestasi DESC LIMIT 12");
 $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
 ?>
@@ -427,76 +296,7 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
         </section>
                 </section>
            
-        <!---Section Title--->
-        <section id="title">
-            <div class="container">
-                <h2 class="title"> 
-                    <b>
-                    <font color="black">Info Lomba</font>
-                    <font color="#273793">ERP Studygroup</font>
-                    </b> 
-                </h2>
-            </div>
-        </section>
 
-        <section id="card-lomba">
-            <div style="padding-left: 3cm; padding-right: 3cm;">
-                <div class="row">
-                    <?php while($i=mysqli_fetch_assoc($cat)): ?>
-                    <div class="col-lg-4 col-md-2 my-2">
-                      <div class="card" style="background-color: #273793; color: white;">
-                        <div class="card-body">
-                          <h5 class="card-title d-flex justify-content-center p-3"><?= $i['cat_name']; ?></h5>
-                          <div class="d-flex justify-content-center">
-                            <a href="#" data-target="#comp<?= $i['id_comp_cat']; ?>" data-toggle="modal" class="btn d-flex justify-content-center" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                            <div id="comp<?= $i['id_comp_cat']; ?>" class="modal fade" role="dialog">
-                              <div class="modal-dialog">
-                                  <div class="modal-content" style="background: #273793; width: 800px; height: 500px; margin-left: -150px;">
-                                  <div class="modal-body" style="background: #273793;">
-                                      <button data-dismiss="modal" class="close" style="color: #FFFFFF;">&larr;</button>
-                                      <h5><b><a style="margin-left: 35px;"><font color="white"><?= $i['cat_name']; ?></font></a></b></h5>
-                                      <hr color="white">
-                                      <div class="container">
-                                        <div class="row shadow rounded">
-                                            <div class="col-12">
-                                                <table class="table border-light mx-3 mt-3 text-light">
-                                                    <tbody>
-                                                        <?php 
-                                                        $id_cat = $i['id_comp_cat'];
-                                                        $lomba = mysqli_query($conn, "SELECT * FROM competition WHERE id_comp_cat='$id_cat'");
-                                                        $nomor = 1;
-                                                        while($x=mysqli_fetch_assoc($lomba)) :?>
-                                                        <tr>
-                                                            <td><strong><?= $nomor; ?>.</strong></th>
-                                                            <td><?= $x['title']; ?></td>
-                                                            <td>
-                                                                <div class="d-flex justify-content-end">
-                                                                    <a class="btn ml-2" href="<?= $x['gb_link']; ?>" style="color:black; background: #85B6FF; font-size: 12px;">LINK GUIDEBOOK</a>
-                                                                    <a class="btn ml-2" href="<?= $x['ig_link']; ?>" style="color:black; background: #85B6FF; font-size: 12px; padding-left: 0.3cm; margin: bottom 1px;">LINK INSTAGRAM</a>
-                                                                </div>
-                                                            
-                                                            </td> 
-                                                        </tr>
-                                                        <?php 
-                                                        $nomor++;
-                                                        endwhile; ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  </div>
-                              </div>  
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        </section>
                 
         <!---Section Title--->
         <section id="title-prestasi">
@@ -540,8 +340,41 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
             </div>
         </section>
                                              
-<?php 
-include "footer.php";
-?>
+        <section class="mt-5">
+            <div class="container">
+              <p class="title-socmed"><b>Find us on social media!</b></p>
+              <div id="social-media">
+                <div class="container">
+                  <center>
+                    <table class="text-center">
+                      <tr>
+                        <td style="padding : 30px">
+                          <a href=""><button class="btn-socmed"><i class="fab fa-youtube stroke-transparent"></i></button></a>
+                          <p style="margin-top: 0.3cm;"><b>ERP Laboratory</b></p>
+                        </td>
+                        <td style="padding : 30px">
+                          <a href=""><button class="btn-socmed"><i class="fab fa-line stroke-transparent"></i></button></a>
+                          <p style="margin-top: 0.3cm;"><b>@dny3610n</b></p>
+                        </td>
+                        <td style="padding : 30px">
+                          <a href=""><button class="btn-socmed"><i class="fab fa-instagram stroke-transparent"></i></button></a>
+                          <p style="margin-top: 0.3cm;"><b>@erpstudygroup</b></p>
+                        </td>
+                        <td style="padding : 30px">
+                          <a href=""><button class="btn-socmed"><i class="fab fa-linkedin stroke-transparent"></i></button></a>
+                          <p style="margin-top: 0.3cm;"><b>ERP Study Group</b></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </section>
 
->>>>>>> febaf176a97b19f965ac39b5bdd1321b1f4656d4
+          <footer style=" background-color: #273793; color:#FFFFFF; padding-top: 20px; padding-bottom: 2px;">
+            <div class="container text-center">
+              <p><b><i>@ERP Study Group 2019</i></b></p>
+            </div>
+          </footer>
+

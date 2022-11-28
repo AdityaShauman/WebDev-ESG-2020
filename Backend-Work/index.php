@@ -74,7 +74,7 @@ include "header.php"; ?>
             <center>
               <div class="row mt-5 mb-5">
                 <div class="col-md-3 col-6">
-                  <a href=""><button class="btn-socmed"><i class="fab fa-youtube stroke-transparent"></i></button></a>
+                  <a href="https://www.youtube.com/@erplaboratory3417"><button class="btn-socmed"><i class="fab fa-youtube stroke-transparent"></i></button></a>
                   <p style="margin-top: 0.3cm;"><b>ERP Laboratory</b></p>
                 </div>
                 <div class="col-md-3 col-6">
@@ -82,11 +82,11 @@ include "header.php"; ?>
                     <p style="margin-top: 0.3cm;"><b>@dny3610n</b></p>
                 </div>
                 <div class="col-md-3 col-6">
-                  <a href=""><button class="btn-socmed"><i class="fab fa-instagram stroke-transparent"></i></button></a>
+                  <a href="https://www.instagram.com/erpstudygroup/"><button class="btn-socmed"><i class="fab fa-instagram stroke-transparent"></i></button></a>
                     <p style="margin-top: 0.3cm;"><b>@erpstudygroup</b></p>
                 </div>
                 <div class="col-md-3 col-6">
-                  <a href=""><button class="btn-socmed"><i class="fab fa-linkedin stroke-transparent"></i></button></a>
+                  <a href="https://www.linkedin.com/company/erpstudygroup/mycompany/"><button class="btn-socmed"><i class="fab fa-linkedin stroke-transparent"></i></button></a>
                     <p style="margin-top: 0.3cm;"><b>ERP Study Group</b></p>
                 </div>
               </div>
