@@ -1,6 +1,24 @@
 <?php 
 $page = 'Login';
-include "header.php";?>
+include "header.php";
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
+require "regis.php";
+require "connectdb.php";
+
+if(isset($_POST["register"])){
+    if(registrasi($_POST)){
+        echo "<script> 
+        alert('Berhasil Registrasi!');  
+    </script>";
+    }else{
+        echo mysqli_error($connect);
+    }
+}
+?>
 
         <!---Section Title--->
         <section id="title">
@@ -29,7 +47,7 @@ include "header.php";?>
                     <button class="btn btn-primary" style="background-color:#273793" type="submit" name="submit"><b>Masuk</b></button>
                     </div>
                     </form>
-                    <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href=""><b>Lupa Password?</b></a>
+                    <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href="register-user.php"><b>Belum punya akun?</b></a>
                 </div>
             </div>
           </div>

@@ -69,7 +69,7 @@ $category = mysqli_query($conn,"SELECT * FROM category");
           </div>
         
 
-        <a class="login-trigger " href="galleryadmin.php" ><p class="text-center my-5" style="color:#273793; font-size: 12px;"><b><u>Login untuk tambahkan gambar</u></b></p></a>
+        <a class="login-trigger " href="login.php" ><p class="text-center my-5" style="color:#273793; font-size: 12px;"><b><u>Login untuk tambahkan gambar</u></b></p></a>
     </section>
         
 <?php 
