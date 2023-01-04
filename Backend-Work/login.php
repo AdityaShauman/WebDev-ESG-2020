@@ -47,7 +47,7 @@ if(isset($_POST["register"])){
                     <button class="btn btn-primary" style="background-color:#273793" type="submit" name="submit"><b>Masuk</b></button>
                     </div>
                     </form>
-                    <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href="register-user.php"><b>Belum punya akun?</b></a>
+                    <!-- <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href="register-user.php"><b>Belum punya akun?</b></a> -->
                 </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 $page = 'Gallery';
 include "header.php"; 
 if(!isset($_SESSION['login'])){

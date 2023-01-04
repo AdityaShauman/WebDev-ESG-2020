@@ -34,7 +34,7 @@ include "header.php";?>
                     <input type="password" class="form-control" id="exampleFormControlInput1" name="passwordregis" placeholder="">
                     </div>
                     <div class="d-grid gap-2">
-                    <button class="btn btn-primary" style="background-color:#273793" type="submit" name="register"><b>Masuk</b></button>
+                    <button class="btn btn-primary" style="background-color:#273793" type="submit" name="register"><b>Daftarkan Akun</b></button>
                     </div>
                     </form>
                     <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href="login.php"><b>Sudah Punya Akun?</b></a>

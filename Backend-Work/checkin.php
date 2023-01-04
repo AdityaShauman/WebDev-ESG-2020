@@ -23,7 +23,7 @@ if(isset($_POST["submit"])) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
             $_SESSION["email"] = $row["email"];
-            $_SESSION["nama"] = $row["nama"];
+            $_SESSION["name"] = $row["name"];
             $_SESSION["login"] = true; 
 
             $_SESSION["message"] = "Berhasil Login";
