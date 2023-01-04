@@ -87,7 +87,7 @@ include "../connectdb.php";
                 
             <!-- Nav Item - Gallery -->
             <li class="nav-item">
-                <a class="nav-link" href="gallery_admin.php">
+                <a class="nav-link" href="../galleryadmin.php">
                     <i class="fas fa-fw fa-image"></i>
                     <span>Gallery</span></a>
             </li>
