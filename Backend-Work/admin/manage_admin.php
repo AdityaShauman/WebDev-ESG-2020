@@ -58,6 +58,7 @@ if(isset($_POST["register"])){
                                         <th>username</th>
                                         <th>nama</th>
                                         <th>email</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,7 +71,7 @@ if(isset($_POST["register"])){
                                             <td><?= $d['username']; ?></td>
                                             <td><?= $d['nama']; ?></td>
                                             <td><?= $d['email']; ?></td>
-                                            <td></td>
+                                            <td><a href="delete.php?username=<?= $d['username'] ?>" class="btn btn-danger mx-4">Delete</a></td>
                                         </tr>
                                         
                                     <?php $i++; endwhile; ?>

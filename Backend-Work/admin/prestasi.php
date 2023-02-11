@@ -66,7 +66,7 @@ if(isset($_GET['delete'])){
                                             <td><?= $d['penyelenggara']; ?></td>
                                             <td><?= $d['tingkat']; ?></td>
                                             <td><?= $d['tahun']; ?></td>
-                                            <td><button class="btn btn-sm btn-danger delete" id="<?= $d['id_prestasi']; ?>"><i class="fas fa-trash"></i></button></td>
+                                            <td><a><button class="btn btn-sm btn-danger delete" id="<?= $d['id_prestasi']; ?>"><i class="fas fa-trash"></i></button></a></td>
                                         </tr>
                                         
                                     <?php $i++; endwhile; ?>

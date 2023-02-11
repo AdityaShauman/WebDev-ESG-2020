@@ -61,8 +61,8 @@ include "../connectdb.php";
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="dashboard.php">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -77,7 +77,7 @@ include "../connectdb.php";
 
             <!-- Nav Item - Home -->
             <li class="nav-item">
-                <a class="nav-link" href="home_admin.php">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
