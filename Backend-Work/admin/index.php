@@ -9,6 +9,7 @@
     <title>Home</title>
 </head>
 <body>
+<div class="container-fluid">
 <section id="dashboard">
     <h4>ERP STUDY GROUP WEB DASHBOARD</h4>
     <h5>Informasi Menu Website</h5>
@@ -45,6 +46,7 @@
         <li>Feedback: Lihat, Hapus feedback</li>
     </ol>
 </section>
+</div>
 </body>
 </html>
 

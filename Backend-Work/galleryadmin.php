@@ -88,7 +88,11 @@ $category = mysqli_query($conn,"SELECT * FROM category");
             <div class="mt-3 d-flex justify-content-center">
               <a class="btn" href="add_category_admin.php" style="background-color: #273793; color:#FFFFFF; border-radius: 3cm;" role="button">Tambah Kategori</a>
             </div>
+            <div class="mt-3 d-flex justify-content-center">
+              <a class="btn" href="../Backend-Work/admin/index.php" style="background-color: #11a820; color:#FFFFFF; border-radius: 3cm;" role="button">Kembali</a>
+            </div>
           </div>
+          
         
 
         <!-- MODAL EDIT -->

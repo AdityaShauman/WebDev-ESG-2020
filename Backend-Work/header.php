@@ -72,9 +72,16 @@ else{$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';}
           </ul>
           <a class="nav-link" href="contact_us.php" style="margin-left: 0.25cm;margin-right: 0.3cm;color: black;"><b>Contact Us</b></a>
           </a>
-          <a href="login.php">
+
+          <?php if(isset($_SESSION["login"])) { ?>
+          <a href="../Backend-Work/admin/index.php">
+            <button class="btn-contact" style="margin-right: 0.8cm; margin-left: 0.25cm;"><?= $_SESSION["username"]; ?></button>
+          </a>
+          <?php } else {?>
+            <a href="login.php">
             <button class="btn-contact" style="margin-right: 0.8cm; margin-left: 0.25cm;"><b>Masuk</b></button>
           </a>
+          <?php };?>
         </div>
       </div>
     </nav>

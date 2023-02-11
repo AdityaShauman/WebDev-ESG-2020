@@ -44,7 +44,7 @@ if(isset($_POST["register"])){
                     <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="Insert Password">
                     </div>
                     <div class="d-grid gap-2">
-                    <button class="btn btn-primary" style="background-color:#273793" type="submit" name="submit"><b>Masuk</b></button>
+                    <button class="btn btn-primary" style="background-color:#273793" type="submit" name="login"><b>Masuk</b></button>
                     </div>
                     </form>
                     <!-- <a class="mt-3 d-flex justify-content-center text-center" style="color:#273793" href="register-user.php"><b>Belum punya akun?</b></a> -->

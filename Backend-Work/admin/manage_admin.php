@@ -54,10 +54,11 @@ if(isset($_POST["register"])){
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>NO</th>
-                                        <th>username</th>
-                                        <th>nama</th>
-                                        <th>email</th>
+                                        <th>No</th>
+                                        <th>Username</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -71,6 +72,7 @@ if(isset($_POST["register"])){
                                             <td><?= $d['username']; ?></td>
                                             <td><?= $d['nama']; ?></td>
                                             <td><?= $d['email']; ?></td>
+                                            <td><?= $d['roleuser']; ?></td>
                                             <td><a href="delete.php?username=<?= $d['username'] ?>" class="btn btn-danger mx-4">Delete</a></td>
                                         </tr>
                                         

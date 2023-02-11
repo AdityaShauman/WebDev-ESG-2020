@@ -8,12 +8,12 @@ require "regis.php";
 require "connectdb.php";
 
 
-if (isset($_SESSION["submit"])){
+if (isset($_SESSION["login"])){
     header("Location: ./admin/index.php");
     exit;
 }
 
-if(isset($_POST["submit"])) {
+if(isset($_POST["login"])) {
     $username = strtolower($_POST["username"]);
     $password = $_POST["password"];
 
