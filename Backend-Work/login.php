@@ -36,12 +36,12 @@ if(isset($_POST["register"])){
                 <div class="col-md-8 mx-auto">
                     <form action="checkin.php" method="POST">
                     <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"><b>Email</b></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Username</b></label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="Insert Username">
                     </div>
                     <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label"><b>Kata Sandi</b></label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="name@example.com">
+                    <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="Insert Password">
                     </div>
                     <div class="d-grid gap-2">
                     <button class="btn btn-primary" style="background-color:#273793" type="submit" name="submit"><b>Masuk</b></button>

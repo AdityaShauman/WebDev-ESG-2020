@@ -3,11 +3,11 @@
     function registrasi ($data){
         global $conn;
 
-        $unameregis = stripslashes($data["unameregis"]);
-        $namaregis = stripslashes($data["namaregis"]);
-        $emailregis = stripslashes($data["emailregis"]);
-        $passwordregis = mysqli_real_escape_string($conn,$data["passwordregis"]);
-        $fotoprofil = upfoto();
+        $unameregis = strtolower(stripslashes($data["username"]));
+        $namaregis = stripslashes($data["nama"]);
+        $emailregis = stripslashes($data["useremail"]);
+        $roleuser = stripslashes($data["roleuser"]);
+        $passwordregis = mysqli_real_escape_string($conn,$data["userpassword"]);
 
 
         $result = mysqli_query($conn, "SELECT email FROM user WHERE email = '$emailregis' ");
@@ -20,18 +20,11 @@
         $password = password_hash($passwordregis, PASSWORD_DEFAULT);
 
         mysqli_query($conn, "INSERT INTO user VALUES (
-            '$unameregis', '$namaregis', '$emailregis','$password','$fotoprofil'
+            '$unameregis', '$namaregis', '$emailregis','$password','$roleuser'
         )");
 
         return mysqli_affected_rows($conn);
 
-    }
-
-    function upfoto(){
-        $fotofile = $_FILES['fotoprofil']['name'];
-        $fototmpname = $_FILES['fotoprofil']['tmp_name'];
-        move_uploaded_file("$fototmpname", "./assets/admin/img/profil/" . $fotofile);
-        return $fotofile;
     }
 
 
