@@ -27,11 +27,13 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
         </section>
 
         <section id="card-lomba">
-            <div style="padding-left: 3cm; padding-right: 3cm;">
+            <div style="padding-left: 3cm; padding-right: 3cm; ">
                 <div class="row">
                     <?php while($i=mysqli_fetch_assoc($cat)): ?>
                     <div class="col-lg-4 col-md-2 my-2">
-                      <div class="card" style="background-color: #273793; color: white;">
+                      <div class="card" style="background-color: #273793; color: white;    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 5px lightgrey;">
                         <div class="card-body">
                           <h5 class="card-title d-flex justify-content-center p-3"><?= $i['cat_name']; ?></h5>
                           <div class="d-flex justify-content-center">
@@ -97,12 +99,11 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
         </section>
 
         <section id="kalender">
-            <div class="container">
-    <br />
+            <div class="container">    
 
-    
-
-    <p align="center"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FJakarta&showTitle=0&showPrint=0&showCalendars=1&showDate=1&showTabs=0&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2333B679&color=%230B8043" style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe></p>
+    <p align="center"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FJakarta&showTitle=0&showPrint=0&showCalendars=1&showDate=1&showTabs=0&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2333B679&color=%230B8043" style="border:solid 3px #777;   border-radius: 7px; 
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 5px lightgrey;" width="610" height="410" frameborder="0" scrolling="no"></iframe></p>
     <!-- <table bgcolor="lightgrey" align="center" cellspacing="21" cellpadding="21" class="mb-5">
 
       <caption align="top">

@@ -3,6 +3,13 @@ $page = 'Kegiatan';
 
 include "connectdb.php"; 
 include "header.php"; 
+
+$ent1 = mysqli_query($conn,"SELECT * FROM kegiatan ORDER BY id_kegiatan DESC LIMIT 12");
+while($d=mysqli_fetch_assoc($ent1)){
+    $data[] = $d;
+}
+$total = count($data);
+$cat = mysqli_query($conn,"SELECT * FROM category");
 ?>
 <html>
     <head>
@@ -46,7 +53,7 @@ include "header.php";
                 </h2>
             </div>
         </section>
-        <section id="carousel-activity">
+        <section id="carousel-activity" style="align: center";>
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">   
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"  aria-current="true" aria-label="Slide 1"></button>
@@ -56,26 +63,26 @@ include "header.php";
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="row">
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="1 slide" ></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="2 slide" ></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="3 slide" ></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="4 slide" style="margin-right: 0.3cm;"></div>           
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide" ></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide" ></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide" ></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide" style="margin-right: 0.3cm;"></div>           
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row">
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="1 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="2 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="3 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="4 slide"></div>           
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide"></div>           
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row">
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="1 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="2 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="3 slide"></div>
-                    <div class="col"><img src="kegiatan_crm.png" width="250" alt="4 slide"></div>            
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide"></div>
+                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide"></div>            
                   </div>
                 </div>
               </div>

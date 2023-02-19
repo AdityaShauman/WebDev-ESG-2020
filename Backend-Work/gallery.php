@@ -27,7 +27,9 @@ $category = mysqli_query($conn,"SELECT * FROM category");
                             while($d=mysqli_fetch_assoc($category)){
                                 echo "
             <div class='col'>
-              <div class='card' style='height: 150px;  background-color: #273793;'>
+              <div class='card' style='height: 150px;  background-color: #273793;   border-radius: 10px; 
+              overflow: hidden;
+              box-shadow: 1px 1px 5px 5px lightgrey;'>
                 <div class='row g-0'>
                     <div class='col-md-4 p-4'>
                       <img src='./assets/uploads/$d[year]/$d[image]' class='img-fluid' alt='...'>
@@ -67,9 +69,8 @@ $category = mysqli_query($conn,"SELECT * FROM category");
                 echo "</div><center><p class='my-5'>Belum ada data</p></center>";
             }?>
           </div>
+          <br><br>
         
-
-        <a class="login-trigger " href="login.php" ><p class="text-center my-5" style="color:#273793; font-size: 12px;"><b><u>Login untuk tambahkan gambar</u></b></p></a>
     </section>
         
 <?php 

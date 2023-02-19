@@ -2,8 +2,19 @@
 $page = 'Home';
 include "header.php"; ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+</head>
+<body>
+
 <!---SECTION TITLE DAN VIDEO-->
-    <section id="title" style= "background-image: url(./assets/img/Frame.png); padding-bottom: 40px; margin-top: -15px;">
+<section id="title" style= "background-image: url(./assets/img/Frame.png); padding-bottom: 40px; margin-top: -15px;">
       <div class="container  mb-5">
         <h2 class="title"> 
           <b>
@@ -16,7 +27,7 @@ include "header.php"; ?>
           <center>
             <div class="row">
               <div class="mx-auto col-md-8">
-                <video src="./assets/video/lab riset ess.mp4" style="border-radius:5px;width:100%" controls></video>
+                <video src="./assets/video/lab riset ess.mp4" style="border:solid 5px #777;border-radius:10px;width:100%; overflow: hidden; box-shadow: 1px 1px 5px 5px lightgrey;" controls></video>
               </div>
             </div>
           </center>
@@ -95,6 +106,10 @@ include "header.php"; ?>
         </div>
       </div>
     </section>
+
+</body>
+</html>
+
 
 <!-- FOOTER -->
 <?php include "footer.php"; ?>
