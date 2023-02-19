@@ -98,10 +98,12 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
 
         <section id="kalender">
             <div class="container">
-    <h2 align="center" style="color: #273793; font-size: 24;">May 2022</h2>
     <br />
 
-    <table bgcolor="lightgrey" align="center" cellspacing="21" cellpadding="21" class="mb-5">
+    
+
+    <p align="center"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FJakarta&showTitle=0&showPrint=0&showCalendars=1&showDate=1&showTabs=0&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2333B679&color=%230B8043" style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe></p>
+    <!-- <table bgcolor="lightgrey" align="center" cellspacing="21" cellpadding="21" class="mb-5">
 
       <caption align="top">
       </caption>
@@ -173,7 +175,7 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
               <td>4</td>
           </tr>
       </tbody>
-  </table>
+  </table> -->
             </div>
         </section>
         </section>                                                    
@@ -372,9 +374,4 @@ $cat = mysqli_query($conn,"SELECT * FROM comp_cat");
             </div>
           </section>
 
-          <footer style=" background-color: #273793; color:#FFFFFF; padding-top: 20px; padding-bottom: 2px;">
-            <div class="container text-center">
-              <p><b><i>@ERP Study Group 2019</i></b></p>
-            </div>
-          </footer>
-
+          <?php include "footer.php"; ?>

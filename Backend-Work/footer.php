@@ -16,7 +16,7 @@
   </body>
   <footer style=" background-color: #273793; color:#FFFFFF; padding-top: 20px; padding-bottom: 2px;">
     <div class="container text-center">
-        <p><b><i>@ERP Study Group 2019</i></b></p>
+        <p><b><i>@ESG Web Dev Team</i></b></p>
     </div>
 </footer>
 </html> 

@@ -44,8 +44,7 @@
                 }
             }
         }else{
-            $_SESSION['alert']='incomplete';
-            echo "<script>window.location.replace('prestasi_add.php');</script>";
+
         }
     }
 ?>
