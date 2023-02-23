@@ -1,7 +1,19 @@
 <?php include "header.php";
-?>
 
-<?php 
+if(isset($_GET['delete'])){
+    $select = mysqli_query($conn,"SELECT * FROM competition WHERE id_comp='".$_GET['delete']."'");
+    if(mysqli_num_rows($select)>0){
+        $s = mysqli_fetch_assoc($select);
+        $delete = mysqli_query($conn,"DELETE FROM competition WHERE id_comp='".$_GET['delete']."'");
+        $_SESSION['alert'] = 'delete-success';
+        echo "<script>window.location.replace('info.php');</script>";
+    }else{
+        $_SESSION['alert'] = 'delete-null';
+        echo "<script>window.location.replace('info.php');</script>";
+    }
+}
+
+
 
 if(!isset($_SESSION)){
     session_start();
@@ -59,6 +71,7 @@ if(isset($_POST["postlomba"])){
                             <th>Kategori</th>
                             <th>Guide Book</th>
                             <th>Sosial Media</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,7 +85,7 @@ if(isset($_POST["postlomba"])){
                                 <td><?= $d['id_comp_cat']; ?></td>
                                 <td><?= $d['gb_link']; ?></td>
                                 <td><?= $d['ig_link']; ?></td>
-                                <td></td>
+                                <td><a><button class="btn btn-sm btn-danger delete" id="<?= $d['id_comp']; ?>"><i class="fas fa-trash"></i></button></a></td>
                             </tr>
                             
                         <?php $i++; endwhile; ?>
@@ -160,5 +173,25 @@ if(isset($_POST["postlomba"])){
 </body>
 </html>
 
-
+<script>
+    $(document).ready(function(){
+        $(".delete").click(function(){
+            Swal.fire({
+            icon: 'warning',
+            title: 'Are you sure?',
+            text: "Process cannot be undone",
+            showDenyButton: true,
+            confirmButtonText: 'Yes',
+            denyButtonText: 'No',
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                window.location.replace('info.php?delete='+$(this).attr('id'));
+            } else if (result.isDenied) {
+                Swal.fire('Delete Cancelled', '', 'info');
+            }
+            });
+        });
+    });
+</script>
 <?php include "footer.php"; ?>
