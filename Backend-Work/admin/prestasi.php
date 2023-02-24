@@ -35,7 +35,7 @@ require "../connectdb.php";
 if(isset($_POST["postprestasi"])){
     if(adding($_POST)){
         echo "<script> 
-        alert('Berhasil Registrasi!');  
+        alert('Berhasil Menambahkan Prestasi!');  
     </script>";
     }else{
         echo mysqli_error($connect);

@@ -4,12 +4,8 @@ $page = 'Kegiatan';
 include "connectdb.php"; 
 include "header.php"; 
 
-$ent1 = mysqli_query($conn,"SELECT * FROM kegiatan ORDER BY id_kegiatan DESC LIMIT 12");
-while($d=mysqli_fetch_assoc($ent1)){
-    $data[] = $d;
-}
-$total = count($data);
-$cat = mysqli_query($conn,"SELECT * FROM category");
+$ent1 = mysqli_query($conn,"SELECT * FROM kegiatan");
+
 ?>
 <html>
     <head>
@@ -114,26 +110,28 @@ $cat = mysqli_query($conn,"SELECT * FROM category");
         <section id="card-lomba" style= "background: linear-gradient(0deg, #d1c9ff 5%, #FFFFFF 90%); padding-bottom: 50px;">
             <div style="padding-left: 3cm; padding-right: 3cm;">
                 <div class="row">
+                <?php foreach( $ent1 as $ent ) : ?>
                     <div class="col-sm-4">
                       <div class="card" style="background-color: #273793; color: white;">
                         <div class="card-body">
-                          <h5 class="card-title d-flex justify-content-center p-3">Workshop ODOO</h5>
+                          <h5 class="card-title d-flex justify-content-center p-3"><?= $ent['judul_kegiatan']; ?></h5>
                           <div class="d-flex justify-content-center">
                             <a href="#" data-target="#event" data-toggle="modal" class="btn d-flex justify-content-center" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                            <div id="event" class="modal fade" role="dialog">
+                          </div>
+                          <div id="event" class="modal fade" role="dialog">
                               <div class="modal-dialog">
                                   <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
                                   <div class="modal-body">
                                       <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
                                       <div class="container">
-                                        <h2 class="text-center" style="color:#273793"><b>Workshop ODOO</b></h2>
-                                        <h4 class="text-center" style="color:#273793">by Yumna Zahran</h4>
+                                        <h2 class="text-center" style="color:#273793"><b><?= $ent['judul_kegiatan']; ?></b></h2>
+                                        <h4 class="text-center" style="color:#273793">by <?= $ent['pj']; ?></h4>
                                         <br>
                                         <center>
                                           <img class="text-center" src="workshop odoo.png" alt="" width="90%">
                                           <br>
                                           <br>
-                                          <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
+                                          <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;"><?= $ent['keterangan']; ?></p>
                                           <br>
                                           <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>
                                         </center>                                                                            
@@ -142,172 +140,10 @@ $cat = mysqli_query($conn,"SELECT * FROM category");
                                   </div>
                               </div>  
                           </div>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-4">
-                      <div class="card" style="background-color: #273793; color: white;">
-                        <div class="card-body">
-                          <h5 class="card-title d-flex justify-content-center p-3">Competition Training</h5>
-                          <div class="d-flex justify-content-center">
-                            <a href="#" class="btn d-flex justify-content-center" data-target="#event2" data-toggle="modal" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                            <div id="event2" class="modal fade" role="dialog">
-                              <div class="modal-dialog">
-                                <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
-                                <div class="modal-body">
-                                    <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
-                                    <div class="container">
-                                      <h2 class="text-center" style="color:#273793"><b>Competition Training</b></h2>
-                                      <h4 class="text-center" style="color:#273793">by Amelia</h4>
-                                      <br>
-                                      <center>
-                                        <img class="text-center" src="workshop odoo.png" alt="" width="90%">
-                                        <br>
-                                        <br>
-                                        <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
-                                        <br>
-                                        <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>
-                                      </center>                                      
-                                  </div>
-                                </div>
-                                </div>
-                            </div>   
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="card" style="background-color: #273793; color: white;">
-                          <div class="card-body">
-                            <h5 class="card-title d-flex justify-content-center p-3">UI/UX Training</h5>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn d-flex justify-content-center" data-target="#event3" data-toggle="modal" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                                <div id="event3" class="modal fade" role="dialog">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
-                                    <div class="modal-body">
-                                        <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
-                                        <div class="container">
-                                          <h2 class="text-center" style="color:#273793"><b>UI/UX Training</b></h2>
-                                          <h4 class="text-center" style="color:#273793">by Dimas</h4>
-                                          <br>
-                                          <center>
-                                            <img class="text-center" src="workshop odoo.png" alt="" width="90%">
-                                            <br>
-                                            <br>
-                                            <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
-                                            <br>
-                                            <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>  
-                                          </center>
-                                      </div>
-                                    </div>
-                                    </div>
-                                </div>   
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-sm-4">
-                      <div class="card" style="background-color: #273793; color: white;">
-                        <div class="card-body">
-                          <h5 class="card-title d-flex justify-content-center p-3">Photoshop Training</h5>
-                          <div class="d-flex justify-content-center">
-                            <a href="#" class="btn d-flex justify-content-center" data-target="#event4" data-toggle="modal" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                            <div id="event4" class="modal fade" role="dialog">
-                              <div class="modal-dialog">
-                                <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
-                                <div class="modal-body">
-                                    <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
-                                    <div class="container">
-                                      <h2 class="text-center" style="color:#273793"><b>Photoshop Training</b></h2>
-                                      <h4 class="text-center" style="color:#273793">by Rafif</h4>
-                                      <br>
-                                      <center>
-                                        <img class="text-center" src="workshop odoo.png" alt="" width="90%">
-                                        <br>
-                                        <br>
-                                        <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
-                                        <br>
-                                        <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>
-                                      </center>
-                                  </div>
-                                </div>
-                                </div>
-                            </div>   
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="card"style=" background-color: #273793; color: white;">
-                        <div class="card-body">
-                          <h5 class="card-title d-flex justify-content-center p-3">Pelatihan dan Sertifikasi</h5>
-                          <div class="d-flex justify-content-center">
-                            <a href="#" class="btn d-flex justify-content-center" data-target="#event5" data-toggle="modal" style="background-color : #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                            <div id="event5" class="modal fade" role="dialog">
-                              <div class="modal-dialog">
-                                <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
-                                <div class="modal-body">
-                                    <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
-                                    <div class="container">
-                                      <h2 class="text-center" style="color:#273793"><b>Pelatihan dan Sertifikasi</b></h2>
-                                      <h4 class="text-center" style="color:#273793">by Diandra</h4>
-                                      <br>
-                                      <center>
-                                        <img class="text-center" src="workshop odoo.png" alt="" width="90%">
-                                        <br>
-                                        <br>
-                                        <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
-                                        <br>
-                                        <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>
-                                      </center>
-                                  </div>
-                                </div>
-                                </div>
-                            </div>                           
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="card" style="background-color: #273793; color: white; ">
-                          <div class="card-body">
-                            <h5 class="card-title d-flex justify-content-center p-3">Company Visit</h5>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn" data-target="#event6" data-toggle="modal" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
-                                <div id="event6" class="modal fade" role="dialog">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
-                                    <div class="modal-body">
-                                        <button data-dismiss="modal" class="close" style="color:#273793 ;">&larr;</button>
-                                        <div class="container">
-                                          <h2 class="text-center" style="color:#273793"><b>Company Visit</b></h2>
-                                          <h4 class="text-center" style="color:#273793">by WCS</h4>
-                                          <br>                                         
-                                          <center>
-                                            <img class="text-center" src="workshop odoo.png" alt="" width="90%">
-                                            <br>
-                                            <br>
-                                            <p style="color: #273793; font-size: 14px; font-weight: normal; text-align: justify; margin-left: 35px; margin-right: 35px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique malesuada amet, elit urna. Tempus viverra ac pharetra urna. Maecenas enim, aliquam porta lectus laoreet a massa malesuada ullamcorper. Iaculis vehicula eu eget pharetra, euismod nibh.</p>
-                                            <br>
-                                            <a class="btn" href="#" role="button" style="background-color: #273793; color: #ffff;">DAFTAR</a>        
-                                          </center>
-                                      </div>
-                                    </div>
-                                    </div>
-                                </div>  
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </section>
