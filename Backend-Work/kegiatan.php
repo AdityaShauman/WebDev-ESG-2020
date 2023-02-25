@@ -116,9 +116,9 @@ $ent1 = mysqli_query($conn,"SELECT * FROM kegiatan");
                         <div class="card-body">
                           <h5 class="card-title d-flex justify-content-center p-3"><?= $ent['judul_kegiatan']; ?></h5>
                           <div class="d-flex justify-content-center">
-                            <a href="#" data-target="#event" data-toggle="modal" class="btn d-flex justify-content-center" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
+                            <a href="#" data-target="#event<?= $ent['id_kegiatan']; ?>" data-toggle="modal" class="btn d-flex justify-content-center" style="background-color: #DCD6FF; width: 85%;"><b>Cek Detail</b></a>
                           </div>
-                          <div id="event" class="modal fade" role="dialog">
+                          <div id="event<?= $ent['id_kegiatan']; ?>" class="modal fade" role="dialog">
                               <div class="modal-dialog">
                                   <div class="modal-content" style="background: #ffffff; width: 800px; height: 600px; margin-left: -150px;">
                                   <div class="modal-body">
