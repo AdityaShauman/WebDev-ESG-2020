@@ -5,6 +5,10 @@ include "connectdb.php";
 include "header.php"; 
 
 $ent1 = mysqli_query($conn,"SELECT * FROM kegiatan");
+while($d=mysqli_fetch_assoc($ent1)){
+  $data[] = $d;
+}
+$total = count($data);
 
 ?>
 <html>
@@ -49,39 +53,93 @@ $ent1 = mysqli_query($conn,"SELECT * FROM kegiatan");
                 </h2>
             </div>
         </section>
-        <section id="carousel-activity" style="align: center";>
+        <section id="carousel-activity">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">   
+                <?php if(mysqli_num_rows($ent1)>0): 
+                  while($d=mysqli_fetch_assoc($ent1)){
+                      $data[] = $d;
+                  }
+                  $total = count($data);  
+                ?>
+             <div class="carousel-indicators">   
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"  aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
+                
+                <?php if($total>3): ?>
                 <div class="carousel-item active">
                   <div class="row">
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide" ></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide" ></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide" ></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide" style="margin-right: 0.3cm;"></div>           
+                    <?php 
+                    $count = 0;
+                    if($total<4){
+                        $max = $total;
+                    }
+                    while($count<4):
+                    ?>
+                    <div class="col"><img src="./assets/img/<?= $data[$count]['gambar_kegiatan']; ?>" width="250" alt="<?= $data[$count]['jenis_lomba']; ?>" ></div>   
+                    <?php 
+                    $count++;
+                    endwhile; ?>       
                   </div>
                 </div>
+                <?php endif; ?>
+                <?php if($total>7): ?>
                 <div class="carousel-item">
                   <div class="row">
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide"></div>           
+                    <?php 
+                    $count = 0;
+                    $id = 4;
+                    if($total>4):
+                        if($total%4==0){
+                            $max = 4;
+                            if($total>8){
+                                $max = 4;
+                            }
+                        }else{
+                            $max=$total%4;
+                            if($total>8){
+                                $max = 4;
+                            }
+                        }
+                        while($count<$max):
+                    ?>
+                    <div class="col"><img src="./assets/img/<?= $data[$id]['gambar_kegiatan']; ?>" width="250" alt="<?= $data[$id]['jenis_lomba']; ?>" ></div>   
+                    <?php 
+                    $id++;
+                    $count++;  
+                    endwhile;
+                    endif; 
+                    ?>       
                   </div>
                 </div>
+                <?php endif; ?>
+                <?php if($total>11): ?>
                 <div class="carousel-item">
                   <div class="row">
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="1 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="2 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="3 slide"></div>
-                    <div class="col"><img src="./assets/img/juaralomba3.png" width="250" alt="4 slide"></div>            
+                    <?php 
+                    $count = 0;
+                    $id = 8;
+                    if($total>8):
+                        if($total%4==0){
+                            $max = 4;
+                        }else{
+                            $max=$total%4;
+                        }
+                        while($count<$max):
+                    ?>
+                    <div class="col"><img src="./assets/img/<?= $data[$id]['gambar_kegiatan']; ?>" width="250" alt="<?= $data[$id]['jenis_lomba']; ?>" ></div>   
+                    <?php 
+                    $id++;
+                    $count++;
+                        endwhile; 
+                    endif;
+                    ?>       
                   </div>
                 </div>
-              </div>
+                <?php endif; ?>
+                
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -91,6 +149,7 @@ $ent1 = mysqli_query($conn,"SELECT * FROM kegiatan");
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+            <?php endif; ?>
         </section>
         </section>
         
