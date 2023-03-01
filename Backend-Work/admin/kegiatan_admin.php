@@ -128,7 +128,9 @@ if(isset($_POST["postkegiatan"])){
 
 <div class="form-group">
 <label class="control-label" for="deskripsi">Deskripsi Kegiatan</label>
-<input class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi Kegiatan" type="text">
+<br>
+<textarea name="deskripsi" cols="40" rows="5"></textarea>
+<!-- <input class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi Kegiatan" type="text"> -->
 </div>
 
 <div class="form-group">
