@@ -2,18 +2,15 @@
 session_start();
 include "connectdb.php"; 
 $body='';
-if($page=='Home'){$class1='<u>Home</u>';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';}
+if($page=='Home'){$class1='<u>Home</u>';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';$class5='Contact Us';}
 elseif($page=='Gallery'){
-    $class1='Home';$class2='<u>Gallery</u>';$class3='Info Lomba';$class4='Kegiatan';
+    $class1='Home';$class2='<u>Gallery</u>';$class3='Info Lomba';$class4='Kegiatan';$class5='Contact Us';
     $body='gallerysec';
 }
-elseif($page=='Info Lomba'){$class1='Home';$class2='Gallery';$class3='<u>Info Lomba</u>';$class4='Kegiatan';}
-elseif($page=='Kegiatan'){$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='<u>Kegiatan</u>';}
-elseif($page=='Feedback'){
-    $class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';
-    $body='feedsec';
-}
-else{$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';}
+elseif($page=='Info Lomba'){$class1='Home';$class2='Gallery';$class3='<u>Info Lomba</u>';$class4='Kegiatan';$class5='Contact Us';}
+elseif($page=='Kegiatan'){$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='<u>Kegiatan</u>';$class5='Contact Us';}
+elseif($page=='Contact Us'){$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';$class5='<u>Contact Us</u>';}
+else{$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';$class5='Contact Us';}
 ?>
 <!doctype html>
 <html lang="en">
@@ -70,7 +67,7 @@ else{$class1='Home';$class2='Gallery';$class3='Info Lomba';$class4='Kegiatan';}
               <a class="nav-link" href="kegiatan.php" style="margin-left: 0.25cm;margin-right: 0.3cm;color: black;"><b><?= $class4; ?></b></a>
             </li>
           </ul>
-          <a class="nav-link" href="contact_us.php" style="margin-left: 0.25cm;margin-right: 0.3cm;color: black;"><b>Contact Us</b></a>
+          <a class="nav-link" href="contact_us.php" style="margin-left: 0.25cm;margin-right: 0.3cm;color: black;"><b><?= $class5; ?></b></a>
           </a>
 
           <?php if(isset($_SESSION["login"])) { ?>
